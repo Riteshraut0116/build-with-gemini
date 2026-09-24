@@ -24,6 +24,37 @@ The agent is wired up with several Google Cloud services and custom tools to han
 - *Itinerary Generator Tool* (Currently relies on standard LLM generation).
 - *Hotel booking tables and widgets* (Currently tables are unsupported in the UI).
 
+## 🗂️ Repository Structure
+
+```text
+.
+├── app/
+│   ├── agent.py               # Core ADK agent definition, tools, and prompts
+│   ├── a2ui_utils.py          # A2UI callback and rendering helpers
+│   ├── fast_api_app.py        # ADK FastAPI entrypoint for the agent
+│   └── app_utils/             # Helpers for reasoning engine and telemetry
+├── frontend/
+│   ├── main.py                # Custom proxy server bridging local UI to Agent Runtime
+│   ├── static/
+│   │   └── index.html         # Custom Travel & Adventure Concierge web UI
+│   └── requirements.txt       # Frontend Python dependencies
+├── deployment/                # Terraform IaC definitions for GCP resources
+├── tests/                     # Unit, integration, and agent evaluation tests
+├── .agents/                   # Custom skills and agents-cli configuration
+├── pyproject.toml             # Python project dependencies (managed by uv)
+├── Dockerfile                 # Containerization for deployment
+├── GEMINI.md                  # Agent System Instructions
+└── agents-cli-manifest.yaml   # Agents CLI configuration and metadata
+```
+
+## 🛠️ Tech Stack & Skills
+
+- **Languages**: Python (Backend Agent & Proxy), HTML / CSS / JavaScript (Frontend UI).
+- **Framework**: Google Agent Development Kit (ADK).
+- **Core AI Models**: Gemini 2.5 Flash (Reasoning), Gemini 3.1 Flash Lite Image (Images), Gemini Omni Flash Preview (Video).
+- **Google Cloud Platform**: Vertex AI Agent Runtime, Memory Bank, Firestore, Cloud Storage, Cloud Run.
+- **External APIs**: Open-Meteo (Weather), Frankfurter (Currency), Google Maps Platform (Places & Geocoding).
+
 ## 🚀 How to Run Locally
 
 You can spin up the agent and its custom frontend proxy locally using the following commands:
