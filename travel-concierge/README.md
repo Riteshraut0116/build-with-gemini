@@ -33,7 +33,7 @@
 
 The agent combines **Gemini models, Vertex AI Agent Runtime, Memory Bank, Firestore, Cloud Storage, Cloud Run, secure Python code execution, and external travel APIs** to support complex, multi-step travel workflows.
 
-[▶️ View Agent Demo](agent_demo.gif)
+![Demo](agent_demo.gif)
 
 ---
 
